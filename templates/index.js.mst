@@ -1,0 +1,22 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'mobx-react';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
+
+import history from './history';
+import './index.css';
+import 'antd/dist/antd.css';
+
+import config from './config/config';
+import stores from './stores';
+import routes from './routes';
+
+ReactDOM.render( (
+  <Provider {...stores} >
+    <Router>
+      <Switch>
+        {routes}
+      </Switch>
+    </Router>
+  </Provider>
+), document.getElementById('root'));
